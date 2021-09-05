@@ -1,7 +1,3 @@
--- Database: testeClaro
-
--- DROP DATABASE "testeClaro";
-
 CREATE DATABASE "testeClaro"
     WITH 
     OWNER = postgres
@@ -11,24 +7,23 @@ CREATE DATABASE "testeClaro"
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 	
--- Table: public.Contatos
-
--- DROP TABLE public."Contatos";
-
-CREATE TABLE IF NOT EXISTS public."Contatos"
+CREATE SCHEMA "claroapi"
+    AUTHORIZATION postgres;
+	
+CREATE TABLE IF NOT EXISTS "claroapi"."contatos"
 (
-    "Email" character varying(120) COLLATE pg_catalog."default" NOT NULL,
-    "Nome" character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    "Telefone" character varying(11) COLLATE pg_catalog."default" NOT NULL,
-    "CEP" character varying(9) COLLATE pg_catalog."default" NOT NULL,
-    "Endereco" character varying(220) COLLATE pg_catalog."default",
-    "Cidade" character varying(80) COLLATE pg_catalog."default",
-    "UF" character varying(2) COLLATE pg_catalog."default",
-    "DataCadastro" date,
-    CONSTRAINT "Contatos_pkey" PRIMARY KEY ("Email")
+    "email" character varying(120) COLLATE pg_catalog."default" NOT NULL,
+    "nome" character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    "telefone" character varying(11) COLLATE pg_catalog."default" NOT NULL,
+    "cep" character varying(9) COLLATE pg_catalog."default" NOT NULL,
+    "endereco" character varying(220) COLLATE pg_catalog."default",
+    "cidade" character varying(80) COLLATE pg_catalog."default",
+    "uf" character varying(2) COLLATE pg_catalog."default",
+    "data_cadastro" date,
+    CONSTRAINT "Contatos_pkey" PRIMARY KEY ("email")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE public."Contatos"
+ALTER TABLE "claroapi"."contatos"
     OWNER to postgres;
