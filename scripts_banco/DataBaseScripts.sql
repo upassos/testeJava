@@ -1,8 +1,8 @@
--- Database: APIData
+-- Database: testeClaro
 
--- DROP DATABASE "APIData";
+-- DROP DATABASE "testeClaro";
 
-CREATE DATABASE "APIData"
+CREATE DATABASE "testeClaro"
     WITH 
     OWNER = postgres
     ENCODING = 'UTF8'
@@ -11,42 +11,24 @@ CREATE DATABASE "APIData"
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 	
--- Type: enderecoCompleto
+-- Table: public.Contatos
 
--- DROP TYPE "testeClaro"."enderecoCompleto";
+-- DROP TABLE public."Contatos";
 
--- Type: enderecoCompleto
-
--- DROP TYPE "testeClaro"."enderecoCompleto";
-
-CREATE TYPE "testeClaro"."enderecoCompleto" AS
+CREATE TABLE IF NOT EXISTS public."Contatos"
 (
-	ender "char"[],
-	bairro "char"[],
-	numero integer,
-	complemento "char"[]
-);
-
-ALTER TYPE "testeClaro"."enderecoCompleto"
-    OWNER TO postgres;
-	
--- Table: testeClaro.Contatos
-
--- DROP TABLE "testeClaro"."Contatos";
-
-CREATE TABLE IF NOT EXISTS "testeClaro"."Contatos"
-(
-    "Email" "char"[] NOT NULL,
-    "Nome" "char"[] NOT NULL,
-    "Telefone" "char"[] NOT NULL,
-    "CEP" integer NOT NULL,
-    "Endereco" "testeClaro"."enderecoCompleto",
-    "Cidade" "char"[],
-    "UF" "char"[],
+    "Email" character varying(120) COLLATE pg_catalog."default" NOT NULL,
+    "Nome" character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    "Telefone" character varying(11) COLLATE pg_catalog."default" NOT NULL,
+    "CEP" character varying(9) COLLATE pg_catalog."default" NOT NULL,
+    "Endereco" character varying(220) COLLATE pg_catalog."default",
+    "Cidade" character varying(80) COLLATE pg_catalog."default",
+    "UF" character varying(2) COLLATE pg_catalog."default",
+    "DataCadastro" date,
     CONSTRAINT "Contatos_pkey" PRIMARY KEY ("Email")
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE "testeClaro"."Contatos"
+ALTER TABLE public."Contatos"
     OWNER to postgres;
