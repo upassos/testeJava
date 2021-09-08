@@ -18,3 +18,7 @@ O arquivo está configurado para ignorar os testes durante a compilação
 O tipo Date no postGreSQL não armazena data e hora, eu teria que usar outro tipo, mas para manter o que foi pedido no desafio, usei o date.
 
 Usei o verbo put no lugar do verbo patch pelo fato de eu permitir que todos os campos (exceto email e data_cadastro) sejam alterados.
+
+#Testes
+
+Fiz os casos de teste que achei que seriam suficiente para demonstrar meu conhecimeto em testes unitários.
