@@ -60,6 +60,9 @@ public class ContatoServiceImpl implements ContatoService {
 			if (contatoValidator.validaCamposContato(novoContato)) {
 				Date date = new Date();
 				novoContato.setDataCadastro(date);
+				novoContato.setEndereco(enderecoDto.getAddress()+" - "+enderecoDto.getDistrict());
+				novoContato.setCidade(enderecoDto.getCity());
+				novoContato.setUf(enderecoDto.getState());
 				return contatoMapper.toDto(contatoRepository.save(contatoMapper.toEntity(novoContato)));
 			}
 		}
@@ -94,11 +97,12 @@ public class ContatoServiceImpl implements ContatoService {
 					alterContatoDto.setCep(novoContato.getCep());
 					alterContatoDto.setCidade(novoContato.getCidade());
 					alterContatoDto.setDataCadastro(novoContato.getDataCadastro());
-					alterContatoDto.setEndereco(novoContato.getEndereco());
+					alterContatoDto.setEndereco(enderecoDto.getAddress()+" - "+enderecoDto.getDistrict());
+					alterContatoDto.setCidade(enderecoDto.getCity());
+					alterContatoDto.setUf(enderecoDto.getState());
 					alterContatoDto.setNome(novoContato.getNome());
 					alterContatoDto.setTelefone(novoContato.getTelefone());
 					alterContatoDto.setUf(novoContato.getUf());
-					System.out.println("AQUI Ó --> \n"+alterContatoDto);
 					return contatoMapper.toDto(contatoRepository.save(contatoMapper.toEntity(alterContatoDto)));
 				}	
 			}
