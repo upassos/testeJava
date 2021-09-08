@@ -1,64 +1,66 @@
 package com.claro.teste.testeClaro.service.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ContatoDto {
 
-	private String Email;
-	private String Nome;
-	private String Telefone;
-	private String Cep;
-	private String Endereco;
-	private String Cidade;
-    private String Uf;
-    private Date DataCadastro;
+	private String email;
+	private String nome;
+	private String telefone;
+	private String cep;
+	private String endereco;
+	private String cidade;
+    private String uf;
+    private String dataExibir;
+    private Date dataCadastro;
+    
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
 	public String getTelefone() {
-		return Telefone;
+		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		Telefone = telefone;
+		this.telefone = telefone;
 	}
 	public String getCep() {
-		return Cep;
+		return cep;
 	}
 	public void setCep(String cep) {
-		Cep = cep;
+		this.cep = cep;
 	}
 	public String getEndereco() {
-		return Endereco;
+		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		Endereco = endereco;
+		this.endereco = endereco;
 	}
 	public String getCidade() {
-		return Cidade;
+		return cidade;
 	}
 	public void setCidade(String cidade) {
-		Cidade = cidade;
+		this.cidade = cidade;
 	}
 	public String getUf() {
-		return Uf;
+		return uf;
 	}
 	public void setUf(String uf) {
-		Uf = uf;
+		this.uf = uf;
 	}
 	public Date getDataCadastro() {
-		return DataCadastro;
+		return dataCadastro;
 	}
 	public void setDataCadastro(Date dataCadastro) {
-		DataCadastro = dataCadastro;
-	}
-    
+		this.dataCadastro = dataCadastro;
+	}   
 }
